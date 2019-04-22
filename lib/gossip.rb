@@ -15,6 +15,12 @@ class Gossip
     end
   end
 
+  def self.find(id)
+    CSV.read("./db/gossips.csv").each_with_index.map {|line,index|
+      [index, line]
+    }.to_h[id]
+  end
+
   def self.all
     CSV.read("./db/gossips.csv").map {|line|
       Gossip.new(line[0], line[1])
