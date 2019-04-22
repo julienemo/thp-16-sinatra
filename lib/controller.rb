@@ -1,9 +1,17 @@
 require_relative "gossip"
 
 class ApplicationController < Sinatra::Base
+
+  # index
   get '/' do
-    erb :index, locals: {gossips: Gossip.all}
+    erb :index
   end
+
+  # list page
+  get '/gossips/all' do
+    erb :gossip_list, locals: {gossips: Gossip.all}
+  end
+
 
   get '/gossips/new' do
     erb:new_gossips
