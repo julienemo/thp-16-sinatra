@@ -1,6 +1,3 @@
-require 'bundler'
-Bundler.require
-
 class ApplicationController < Sinatra::Base
   get '/' do
     '<html>
@@ -17,6 +14,4 @@ class ApplicationController < Sinatra::Base
       </body>
     </html>'
   end
-
-  run! if app_file == $0
 end
