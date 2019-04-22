@@ -1,12 +1,15 @@
 <html>
   <head>
-    <title>Gossip machin</title>
+    <title>Burning-hot gossips</title>
   </head>
   <body>
-
-    <h1><% params['name'] %> </h1>
-
-
-
+    <h1>Here is a list of all gossips:
+    </h1>
+    <% gossips.each_with_index do |gossip, index| %>
+      <p>
+        <%= gossip.author %><br/>
+        <a href = /gossip/<%= index %>><%= gossip.content %></a>
+        </p>
+    <% end %>
   </body>
 </html>
