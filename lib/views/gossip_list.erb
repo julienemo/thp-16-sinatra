@@ -7,9 +7,13 @@
     </h1>
     <% gossips.each_with_index do |gossip, index| %>
       <p>
-        <%= gossip.author %><br/>
-        <a href = /gossips/<%= index %>><%= gossip.content %></a>
-        </p>
+        <strong><%= gossip.author %></strong> says<br/>
+        <a href = /gossips/<%= index %>>"<%= gossip.content %>"</a>
+      </p>
     <% end %>
+      <p>
+        back to <a href = "../">home</a>
+      </p>
+
   </body>
 </html>
