@@ -14,7 +14,8 @@ can go back to homepage from there
 -creation page: creates one new gossip per submit and redirects to updated list
 (http://localhost:4567/gossips/new)
 
--individual gossip page: displays only the one gossip on which user clicked. Provides possibility to change it. Anybody can change any existing gossip. Can go back either to homepage or list page
+-individual gossip page: displays only the one gossip on which user clicked. Provides possibility to change it. Anybody can change any existing gossip. Can go back either to homepage or list page.
+It currently has a comment formula that DOESN'T work.
 (http://localhost:4567/gossips/:id)
 
--editing page: collects the update by a formula. Redirects to the list page with updated gossips. 
+-editing page: collects the update by a formula. Redirects to the list page with updated gossips.

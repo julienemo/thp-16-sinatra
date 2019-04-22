@@ -33,6 +33,15 @@ class ApplicationController < Sinatra::Base
     erb :gossip_individual, locals:{id:id, gossip: Gossip.find(id)}
   end
 
+  # commenting func on individual page
+  post '/gossips/:id' do
+    id = params['id'].to_i
+    erb :gossip_individual,
+    locals:{id:id,comment: params['comment'],
+      username:params['username']}
+    puts params
+  end
+
   # to edit an existing gossip
   get '/gossips/:id/edit' do
     id = params['id'].to_i
