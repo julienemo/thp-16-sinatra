@@ -14,4 +14,14 @@ class ApplicationController < Sinatra::Base
     redirect '/'
   end
 
-end
+  get '/gossips/:id' do 
+  params[:id].to_i
+  "tu as affcihé #{params[:id]}"
+  end
+ 
+  	 
+
+  end
+
+
+

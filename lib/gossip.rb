@@ -11,13 +11,17 @@ class Gossip
 
   def save
     CSV.open("./db/gossips.csv", "ab") do |csv|
-      csv << [@author, @content]
+    csv << [@author, @content]
     end
   end
 
   def self.all
     CSV.read("./db/gossips.csv").map {|line|
-      Gossip.new(line[0], line[1])
+    Gossip.new(line[0], line[1])
     }
   end
+
+
+
+
 end
