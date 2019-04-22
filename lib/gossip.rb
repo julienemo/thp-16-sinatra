@@ -17,9 +17,6 @@ class Gossip
 
   def self.find(id)
     CSV.read("./db/gossips.csv")[id]
-    #.each_with_index.map {|line,index|
-    #  [index, line]
-    #}[id]
   end
 
   def self.all
