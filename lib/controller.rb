@@ -25,7 +25,19 @@ class ApplicationController < Sinatra::Base
 
   # page of each gossip
   get '/gossips/:id' do
-    erb :gossip_individual, locals:{id:params['id'].to_i, gossip: Gossip.find(params['id'].to_i)}
+    id = params['id'].to_i
+    erb :gossip_individual, locals:{id:id, gossip: Gossip.find(id)}
+  end
+
+  get '/gossips/:id/edit' do
+    id = params['id'].to_i
+    erb :edit, locals:{id:id, gossip: Gossip.find(id)}
+  end
+
+  post '/gossips/:id/edit' do
+    id = params['id'].to_i
+    Gossip.update(params['author'].capitalize, params['content'].capitalize, id)
+    redirect '/gossips/all'
   end
 
 end

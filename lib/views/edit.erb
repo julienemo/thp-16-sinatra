@@ -1,0 +1,14 @@
+<html>
+  <head>
+    <title>Edit gossip</title>
+  </head>
+  <body>
+    <h1>You said you wanted to edit this gossip? </h1>
+    <p>Replace with new info:</p>
+    <form action='/gossips/<%= id%>/edit' method='POST'>
+      Alias: <input value='<%= gossip[0]%>' type='text' name='author'/><br/>
+      insight: <input value='<%= gossip[1]%>' type='text' name='content'/><br/>
+      <input type='submit'/>
+    </form>
+  </body>
+</html>
