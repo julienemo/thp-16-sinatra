@@ -10,7 +10,14 @@
       Our super GOSSIP SITE! (with love from /views)
     </h1>
     <p>
-      Gossip list will be available soon!<br>Meanwhile, why not <a href = " /gossips/new">create one of your own</a>?
+      Gossip list will be available soon soon soon!<br>Meanwhile, why not <a href = " /gossips/new">create one of your own</a>?
     </p>
+    <% gossips.each do |gossip| %>
+            <p>
+              <%= gossip.author %><br/>
+              <%= gossip.content %>
+            </p>
+          <% end %>
+
   </body>
 </html>
