@@ -12,10 +12,10 @@
     <p>
       Gossip list will be available soon soon soon!<br>Meanwhile, why not <a href = " /gossips/new">create one of your own</a>?
     </p>
-    <% gossips.each do |gossip| %>
+    <% gossips.each_with_index do |gossip, index| %>
             <p>
               <%= gossip.author %><br/>
-              <%= gossip.content %>
+              <a href = "/gossip/<%= index%>" ><%= gossip.content %></a>
             </p>
           <% end %>
 
