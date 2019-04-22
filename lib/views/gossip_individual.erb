@@ -14,6 +14,13 @@
       "<%= gossip[1]%>"<br>
       from <strong><%= gossip[0]%></strong>
     </p>
+    <p>You have a opinion. Leave a comment!
+    </p>
+    <form action='/gossips/<%= id%>/' method='POST'>
+      Comment: <input type='text' name='comment'/><br/>
+      Username: <input type='text' name='username'/><br/>
+      <input type='submit'/>
+    </form>
     <p>
       <ul>
         <li>back to <a href = "./all" >list</a></li>

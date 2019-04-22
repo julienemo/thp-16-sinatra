@@ -14,7 +14,7 @@ class ApplicationController < Sinatra::Base
 
   # to create
   get '/gossips/new' do
-    erb:new_gossips
+    erb:gossips_new
   end
 
   # to create (reaction to formula)
@@ -36,7 +36,7 @@ class ApplicationController < Sinatra::Base
   # to edit an existing gossip
   get '/gossips/:id/edit' do
     id = params['id'].to_i
-    erb :edit, locals:{id:id, gossip: Gossip.find(id)}
+    erb :gossips_edit, locals:{id:id, gossip: Gossip.find(id)}
   end
 
   # to edit: reaction after submitting the fomula
