@@ -10,7 +10,8 @@ class ApplicationController < Sinatra::Base
   end
 
   post '/gossips/new/' do
-    Gossip.new("Salut", "sa va").save
+    Gossip.new(params['author'], params['content']).save
+    redirect '/'
   end
 
 end
