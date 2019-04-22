@@ -26,8 +26,4 @@ class Gossip
     Gossip.new(line[0], line[1])
     }
   end
-
-
-
-
 end

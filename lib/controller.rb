@@ -2,10 +2,7 @@ require_relative "gossip"
 
 class ApplicationController < Sinatra::Base
 
-<<<<<<< HEAD
-=======
   # index
->>>>>>> julie
   get '/' do
     erb :index
   end
@@ -15,18 +12,20 @@ class ApplicationController < Sinatra::Base
     erb :gossip_list, locals: {gossips: Gossip.all}
   end
 
-
+  # to create
   get '/gossips/new' do
     erb:new_gossips
   end
 
+  # to create (reaction to formula)
   post '/gossips/new/' do
     Gossip.new(params['author'].capitalize, params['content'].capitalize).save
-    redirect '/'
+    redirect 'gossips/all'
   end
 
-  post '/gossip/:id' do
-    erb :gossip_individual, locals:{id:params['id'].to_i, gossip:Gossip.find(params['id'].to_i)}
+  # page of each gossip
+  get '/gossips/:id' do
+    erb :gossip_individual, locals:{id:params['id'].to_i, gossip: Gossip.find(params['id'].to_i)}
   end
 
 end

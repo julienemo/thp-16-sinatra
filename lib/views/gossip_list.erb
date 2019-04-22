@@ -8,7 +8,7 @@
     <% gossips.each_with_index do |gossip, index| %>
       <p>
         <%= gossip.author %><br/>
-        <a href = /gossip/<%= index %>><%= gossip.content %></a>
+        <a href = /gossips/<%= index %>><%= gossip.content %></a>
         </p>
     <% end %>
   </body>
